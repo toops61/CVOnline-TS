@@ -1,0 +1,460 @@
+.home {
+    height: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    //justify-content: space-between;
+    align-items: center;
+    @include tablette-version {
+        align-items: start;
+    }
+    background-color: #1D1D1B;
+    * {
+        color: white;
+    }
+    .img-container {
+        display: flex;
+        transition: .8s;
+    }
+    .img {
+        width: 15em;
+        height: 15em;
+        @include flexCenter;
+        img {
+            @include imageFit;
+        }
+    }
+    h3 {
+        font-size: 1.4em;
+    }
+}
+
+.perso-wire {
+    position: absolute;
+    overflow: hidden;
+    @include tablette-version {
+        display: none;
+    }
+}
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(-58%);
+    height: 100%;
+    @include tablette-version {
+        transform: translateX(-42%);
+        height: 80%;
+    }
+    .img-container:hover {
+        transform: translateX(7vw);
+    }
+    .vinyl {
+        img {
+            transition: .8s;
+            &:hover {
+                transform: rotate(45deg);
+            }
+        }
+    }
+    .fill {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    .sound-engineer {
+        position: relative;
+        h3 {
+            transform: translateY(3em);
+        }
+        .perso-wire {
+            //border: solid red .1em;
+            top: 9em;
+            right: -13vw;
+            width: 24vw;
+            height: 7em;
+            .first-part {
+                border-radius: 1em;
+                width: 50%;
+                height: 1em;
+                overflow: hidden;
+                .fill {
+                    transform: translateX(110%);
+                }
+            }
+            .second-part {
+                border-radius: 1em;
+                position: absolute;
+                left: 11vw;
+                top: 0;
+                width: 1em;
+                height: 100%;
+                overflow: hidden;
+                .fill {
+                    transform: translateY(110%);
+                }
+            }
+            .third-part {
+                border-radius: 1em;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 53%;
+                height: 1em;
+                overflow: hidden;
+                .fill {
+                    transform: translateX(110%);
+                }
+            }
+        }
+        &:hover .perso-wire {
+            .first-part .fill {
+                animation: 200ms 1000ms 1 forwards right-to-left-bar;
+            }
+            .second-part .fill {
+                animation: 400ms 700ms 1 forwards down-to-up-bar;
+            }
+            .third-part .fill {
+                animation: 200ms 500ms 1 forwards right-to-left-bar;
+            }
+        }
+    }
+    .micro {
+        img {
+            transform: translateX(4.5em);
+        }
+    }
+    .radio {
+        position: relative;
+        .perso-wire {
+            //border: solid red .1em;
+            bottom: 8em;
+            right: -11em;
+            width: 18em;
+            height: 9em;
+            .first-part {
+                border-radius: 1em;
+                position: absolute;
+                right: 0;
+                width: 40%;
+                height: 1em;
+                overflow: hidden;
+                .fill {
+                    transform: translateX(110%);
+                }
+            }
+            .second-part {
+                border-radius: 1em;
+                position: absolute;
+                right: 6.4em;
+                top: 0.1em;
+                width: 1em;
+                height: 98%;
+                overflow: hidden;
+                .fill {
+                    transform: translateY(110%);
+                }
+            }
+            .third-part {
+                border-radius: 1em;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 64%;
+                height: 1em;
+                overflow: hidden;
+                .fill {
+                    transform: translateX(110%);
+                }
+            }
+            @include tablette-version {
+                display: none;
+            }
+        }
+        &:hover .perso-wire {
+            .first-part .fill {
+                animation: 200ms 500ms 1 forwards right-to-left-bar;
+            }
+            .second-part .fill {
+                animation: 300ms 700ms 1 forwards up-to-down-bar;
+            }
+            .third-part .fill {
+                animation: 200ms 1000ms 1 forwards right-to-left-bar;
+            }
+        }
+    }
+}
+
+.center {
+    height: 100%;
+    @include flexCenter;
+    width: 34vw;
+    @include mobile-version {
+        display: none;
+    }
+    @media (orientation: portrait) {
+        display: none;
+    }
+}
+
+.img-profil {
+    //height: 20em;
+    width: 100%;
+    margin-bottom: 5em;
+    position: relative;
+    z-index: 99;
+    img {
+        @include imageFit;
+    }
+}
+
+.right-side {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(17em);
+    width: fit-content;
+    height: 100%;
+    @include tablette-version {
+        transform: translateX(2em);
+        height: 77%;
+    }
+    .fill {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    .img-container:hover {
+        transform: translateX(-6em);
+    }
+    .img-container:first-child {
+        transform: translateX(-2em);
+    }
+    .img-container:first-child:hover {
+        transform: translateX(-13em);
+    }
+    h3 {
+        margin-right: 1em;
+    }
+    .seipra {
+        height: 5em;
+        width: fit-content;
+        transform: translateX(10em);
+        margin-top: 1em;
+        transition: 800ms;
+    }
+    .pro-proj {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+
+        .perso-wire {
+            top: 3.5em;
+            width: 17vw;
+            left: -12vw;
+            height: 9em;
+            .first-part {
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                border-radius: 1em;
+                width: 100%;
+                height: 1em;
+                overflow: hidden;
+                .fill {
+                    transform: translateX(110%);
+                }
+            }
+            .second-part {
+                border-radius: 1em;
+                position: absolute;
+                right: 0;
+                top: 0.3em;
+                width: 1em;
+                height: 96%;
+                overflow: hidden;
+                .fill {
+                    transform: translateY(110%);
+                }
+            }
+        }
+        &:hover .seipra {
+            transform: translateX(5em);
+            
+        }
+        &:hover .perso-wire {
+            .first-part .fill {
+                animation: 300ms 500ms 1 forwards left-to-right-bar;
+            }
+            .second-part .fill {
+                animation: 300ms 800ms 1 forwards down-to-up-bar;
+            }
+        }
+    }
+    .code-window {
+        height: 10em;
+        width: fit-content;
+    }
+    .perso-proj {
+        position: relative;
+        .perso-wire {
+            top: -50%;
+            left: -17vw;
+            width: 15vw;
+            height: 8em;
+            .fill {
+                transform: translateX(-110%);
+            }
+            .first-part {
+                border-radius: 1em;
+                width: 50%;
+                height: 1em;
+                overflow: hidden;
+            }
+            .second-part {
+                border-radius: 1em;
+                position: absolute;
+                left: 6vw;
+                top: .1em;
+                width: 1em;
+                height: 99%;
+                overflow: hidden;
+                .fill {
+                    transform: translateY(-110%);
+                }
+            }
+            .third-part {
+                border-radius: 1em;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 59%;
+                height: 1em;
+                overflow: hidden;
+                .fill {
+                    transform: translateX(-110%);
+                }
+            }
+        }
+        &:hover .perso-wire {
+            .first-part .fill {
+                animation: 200ms 500ms 1 forwards left-to-right-bar;
+            }
+            .second-part .fill {
+                animation: 300ms 700ms 1 forwards up-to-down-bar;
+            }
+            .third-part .fill {
+                animation: 200ms 1000ms 1 forwards left-to-right-bar;
+            }
+        }
+    }
+}
+
+.bottom-links {
+    position: absolute;
+    bottom: -11em;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    .img-container {
+        flex-direction: column;
+        align-items: center;
+        &:hover {
+            transform: translateY(-5em);
+        }
+    }
+    .K {
+        width: 11em;
+    }
+    .TV {
+        transform: translateY(-2em);
+    }
+    h3 {
+        margin-bottom: .5em;
+    }
+    .fill {
+        width: 100%;
+        height: 100%;
+        background-color: white;
+    }
+    .sound-design {
+        position: relative;
+        .perso-wire {
+            top: -50%;
+            left: -1vw;
+            width: 13vw;
+            height: 8em;
+            .fill {
+                transform: translateX(-110%);
+            }
+            .first-part {
+                border-radius: 1em;
+                width: 100%;
+                height: 1em;
+                overflow: hidden;
+            }
+            .second-part {
+                border-radius: 1em;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 1em;
+                height: 100%;
+                overflow: hidden;
+                .fill {
+                    transform: translateY(-110%);
+                }
+            }
+        }
+        &:hover .perso-wire {
+            .first-part .fill {
+                animation: 200ms 500ms 1 forwards left-to-right-bar;
+            }
+            .second-part .fill {
+                animation: 400ms 700ms 1 forwards up-to-down-bar;
+            }
+        }
+    }
+    .kobutsune {
+        position: relative;
+        .perso-wire {
+            bottom: 9em;
+            right: -9em;
+            width: 11em;
+            height: 13em;
+            .first-part {
+                position: absolute;
+                bottom: 0;
+                border-radius: 1em;
+                width: 100%;
+                height: 1em;
+                overflow: hidden;
+                .fill {
+                    transform: translateX(-110%);
+                }
+            }
+            .second-part {
+                border-radius: 1em;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 1em;
+                height: 100%;
+                overflow: hidden;
+                .fill {
+                    transform: translateY(-110%);
+                }
+            }
+        }
+        &:hover .perso-wire {
+            .first-part .fill {
+                animation: 300ms 800ms 1 forwards right-to-left-bar;
+            }
+            .second-part .fill {
+                animation: 300ms 500ms 1 forwards up-to-down-bar;
+            }
+        }
+    }
+
+}

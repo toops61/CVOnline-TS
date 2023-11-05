@@ -1,0 +1,157 @@
+.slider-page {
+    font-family: sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(10deg,#ba0303, #ffb638);
+    @include flexCenter;
+    color: rgb(209, 209, 209);
+    .alert-window {
+        z-index: 99;
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        left: 0;
+        top: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: rgba(255, 255, 255, .8);
+      }
+      
+      .alert-box {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        height: 15em;
+        width: 30em;
+        background-color: rgb(153, 2, 2);
+        color: white;
+        padding: 2em;
+        h1 {
+          font-size: 1.6em;
+        }
+      }
+      
+    .main-slider {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        width: 30em;
+        height: 25em;
+        overflow: hidden;
+        border: solid .2em white;
+        .top-section {
+            width: 35em;
+            height: 80%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+          }
+          
+          .picture-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 700ms;
+            h3 {
+              margin: .5em 0;
+              font-size: 1.3em;
+            }
+            p {
+              font-size: 1em;
+            }
+          }
+          
+          .picture-box {
+            width: 12em;
+            height: 12em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            img {
+              object-fit:cover;
+              width: 100%;
+              height: 100%;
+              border-radius: 50%;
+            }
+          }
+          
+          .arrow {
+            position: absolute;
+            top: 40%;
+            width: 2.5em;
+            height: 2.5em;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: solid .1em white;
+            border-radius: 50%;
+            background-color: transparent;
+            z-index: 90;
+            &::before {
+                @include icon('\f053',1.2em);
+            }
+          }
+          
+          .left {
+            left: 1.5em;
+          }
+          
+          .right {
+            right: 1.5em;
+            transform: rotate(180deg);
+          }
+          
+          .button-change {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: .5em 3em;
+            background-color: black;
+            color: rgb(237, 237, 237);
+            border: solid .12em rgb(237, 237, 237);
+            width: fit-content;
+            /* margin-top: 2em; */
+            z-index: 90;
+          }
+          
+          .left-anim {
+            animation: anim-left 800ms forwards linear;
+          }
+          .right-anim {
+            animation: anim-right 800ms forwards linear;
+          }
+          
+          .visible {
+            opacity: 1;
+          }
+          
+          .left-anim .picture-container:nth-child(3),.right-anim .picture-container:nth-child(1) {
+            animation: appears 800ms forwards linear;
+          }
+          .left-anim .picture-container:nth-child(2),.right-anim .picture-container:nth-child(2) {
+            animation: disappears 800ms forwards linear;
+          }
+          
+          button {
+            cursor: pointer;
+          }
+          *,::before {
+            color: rgb(237, 237, 237);
+          }
+    }
+    .previous-page::before { 
+        color: white;
+    }
+    @media screen and (max-width: 600px) {
+        * {
+            font-size: 3vw;
+        }
+    }
+}
+.dark .slider-page {
+    background: linear-gradient(174deg,#1300c2, #8a4300);
+}

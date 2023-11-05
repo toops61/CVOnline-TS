@@ -1,0 +1,64 @@
+.seipra-page {
+    @include flexColumn;
+    //width: 100vw;
+    background-color: #1D1D1B;
+    .logo-seipra {
+        width: 25vw;
+        height: 6em;
+        img {
+            @include imageFit;
+        }
+    }
+    h1 {
+        font-size: 2em;
+        margin: 1em 0;
+    }
+    .screenshots-container {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+    .screenshot {
+        display: flex;
+        width: 100%;
+        padding: 0 2vw;
+        &__img {
+            width: 55%;
+            img {
+                @include imageFit;
+            }
+            transition: .8s;
+            transform: translateX(100vw);
+        }
+        &__txt {
+            flex: 1;
+            padding: 1em;
+            min-height: 12em;
+            p {
+                font-size: 1.6em;
+            }
+            transition: .8s;
+            transform: translateX(100vw);
+        }
+        &.long {
+            flex-direction: column;
+            .screenshot__img {
+                width: 100%;
+            }
+        }
+        &.left {
+            .screenshot__img,.screenshot__txt {
+                transform: translateX(-100vw);
+            }
+        }
+        &.appears {
+            .screenshot__img,.screenshot__txt {
+                transform: translateX(0);
+            }
+        }
+        @media (orientation: portrait) {
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}

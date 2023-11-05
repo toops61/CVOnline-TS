@@ -1,0 +1,52 @@
+@import "./utils/variables";
+@import "./utils/functions";
+@import "./utils/mixins";
+@import "./utils/extensions";
+@import "./utils/keyframes";
+
+@import "./base/base";
+@import "./base/typography";
+
+@import "./components/buttons";
+
+@import "./layout/container";
+@import "./layout/footer";
+@import "./layout/header";
+@import "./layout/loader";
+@import "./layout/nav";
+@import "./layout/form";
+
+
+@import "./pages/index";
+@import "./pages/home";
+@import "./pages/seipra";
+@import "./pages/soundEngineer";
+@import "./pages/radioEngineer";
+@import "./pages/code-projects";
+
+@import "./pages/projectsJS/imc";
+@import "./pages/projectsJS/quizz";
+@import "./pages/projectsJS/wikiApp";
+@import "./pages/projectsJS/cookies";
+@import "./pages/projectsJS/app-meteo";
+@import "./pages/projectsJS/colors";
+@import "./pages/projectsJS/pomodoro";
+@import "./pages/projectsJS/validation-formulaire";
+@import "./pages/projectsJS/memory-game";
+@import "./pages/projectsJS/infinite-scroll";
+@import "./pages/projectsJS/slider";
+@import "./pages/projectsJS/password-generator";
+@import "./pages/projectsJS/filter-list";
+@import "./pages/projectsJS/calculator";
+@import "./pages/projectsJS/typing-game";
+@import "./pages/projectsJS/morpion";
+@import "./pages/projectsJS/animation";
+@import "./pages/projectsJS/particules";
+@import "./pages/projectsJS/audio-player";
+@import "./pages/projectsJS/video-player";
+
+@import "./pages/otherProjects/prime-numbers";
+@import "./pages/otherProjects/nasa-pictures";
+@import "./pages/otherProjects/converters";
+@import "./pages/otherProjects/flags-project";
+@import "./pages/otherProjects/books-search";

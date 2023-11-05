@@ -1,0 +1,153 @@
+.wiki-page {
+    min-height: 100vh;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: clamp(20px, 5vw, 50px) 20px 20px;
+    .no-result {
+      font-size: 1.5em;
+      margin-top: 1em;
+    }
+    .loader {
+        @include loader-style;
+        width: 100vw;
+        height: 100vh;
+        .point {
+          background-color: black;
+        }
+      }
+      
+      .error-window {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 99;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #fff;
+      }
+      
+      .error {
+        width: 50vw;
+        padding: 2em;
+        background-color: rgb(192, 0, 0);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 1em;
+        p {
+              color: #fff;
+              font-size: 1.4em;
+          }
+    }
+      
+      section {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      
+      .logo {
+        width: 10em;
+        height: 10em;
+        img {
+          object-fit: contain;
+          width: 100%;
+          height: 100%;
+        }
+      }
+      
+      .search {
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: 60%;
+        @media screen and (max-width: 600px) {
+          width: 90%;
+        }
+        button {
+          width: 2em;
+          height: 2em;
+          margin-left: 1em;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #fff;
+          border-radius: .4em;
+          box-shadow: .1em .1em .2em rgb(155, 155, 155);
+        }
+      }
+      
+      #searchInput {
+        width: 90%;
+        padding: .5em;
+        border-radius: .5em;
+        border: solid .1em;
+        box-shadow: .2em .2em .2em rgb(155, 155, 155);
+        margin: 1em 0;
+      }
+
+      #number-search {
+        margin-left: .5em;
+        color: #082879;
+      }
+
+      .reset {
+        cursor: pointer;
+        position: absolute;
+        width: 1em;
+        height: 1em;
+        right: 9%;
+        top: .5em;
+        background-color: #fff;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: solid .05em;
+        @media screen and (max-width: 600px) {
+          right: 12%;
+        }
+        p {
+          font-size: .7em;
+        }
+      }
+      
+      svg {
+        width: 1em;
+        height: 1em;
+      }
+      
+      h1 {
+        font-size: 2em;
+        font-weight: normal;
+      }
+      
+      span {
+        font-size: 1em;
+        font-weight: bold;
+      }
+      
+      .result-container {
+        margin-top: 2em;
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .result-card {
+        box-shadow: .1em .1em .2em rgb(155, 155, 155);
+        width: 70vw;
+        padding: 1em;
+        background-color: #fff;
+        margin-bottom: 1em;
+      }
+      .search,.result-container {
+        * {
+          color: #082879;
+        }
+      }
+      @include adapt-size;
+}

@@ -1,0 +1,64 @@
+*, ::before, ::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100vh;
+  background-color: #fff;
+  color: $fifth-color;
+}
+
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  transition: .8s;
+  .ReactQueryDevtools {
+    .ReactQueryDevtoolsPanel {
+      color: #fff;
+    }
+  }
+}
+
+ul, li {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.dark {
+  background-color: $fifth-color;
+  *,::before,::after {
+    color: #fff;
+  }
+}
+
+.previous-page {
+  cursor: pointer;
+  z-index: 50;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+  border: none;
+  background-color: transparent;
+  box-shadow: none;
+  &::before {
+      @include icon('\f137',2em);
+  }
+}
